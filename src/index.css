@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  @apply bg-transparent w-2;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-secondary-dark rounded-full;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  @apply bg-transparent;
+}
+.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
+  @apply bg-secondary-border;
+}
+
+.primary-linear {
+  background: linear-gradient(0deg, #000000, #000000),
+    /* First linear gradient - horizontal black */
+      linear-gradient(
+        180deg,
+        #484848 0%,
+        /* Start with a dark gray color at 0% */ rgba(80, 80, 80, 0) 50%,
+        /* Gradually fade to transparent at 50% */ #484848 100%
+          /* End with dark gray color at 100% */
+      ); /* Second linear gradient - vertical gradient with dark gray and transparency */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shawal-transition {
+  animation: fade 1.5s ease-in-out;
+}
+
+@layer utilities {
+  .animate-rotation {
+    animation: rotation 2s linear infinite;
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: transparent;
+}
+
+.card-wrapper {
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes slider {
+  0% {
+    transform: translateX(0%);
+  }
+  10% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateX(-200%);
+  }
+  40% {
+    transform: translateX(-200%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  60% {
+    transform: translateX(-300%);
+  }
+  70% {
+    transform: translateX(-300%);
+  }
+  80% {
+    transform: translateX(-300%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
